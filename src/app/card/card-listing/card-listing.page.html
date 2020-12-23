@@ -4,4 +4,14 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding"> <h1>{{cardDeck}}</h1> </ion-content>
+<ion-content class="ion-padding" *ngIf="cards.length > 0">
+	<ion-list *ngFor="let card of cards">
+		<ion-list-header>
+			<ion-label>{{ card.name }}</ion-label>
+		</ion-list-header>
+
+		<ion-item>
+			<ion-label>{{ card.cardSet }}</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>
