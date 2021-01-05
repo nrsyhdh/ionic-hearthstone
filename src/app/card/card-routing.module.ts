@@ -11,6 +11,14 @@ const routes: Routes = [
   {
     path: 'card-listing',
     loadChildren: () => import('./card-listing/card-listing.module').then( m => m.CardListingPageModule)
+  },
+  {
+    path: 'card-detail',
+    loadChildren: () => import('./card-detail/card-detail.module').then( m => m.CardDetailPageModule)
+  },
+  {
+    path: 'card-favorite',
+    loadChildren: () => import('./card-favorite/card-favorite.module').then( m => m.CardFavoritePageModule)
   }
 ];
 

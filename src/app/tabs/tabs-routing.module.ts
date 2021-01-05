@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CardListingPage } from "../card/card-listing/card-listing.page";
 import { TabsPage } from "./tabs.page";
 
 const routes: Routes = [
@@ -9,20 +8,24 @@ const routes: Routes = [
 		component: TabsPage,
 		children: [
 			{
-				path: "about",
+				path: "favorite",
 				loadChildren: () =>
-					import("../about/about.module").then((m) => m.AboutPageModule),
-			},
-			{
-				path: "contact",
-				loadChildren: () =>
-					import("../contact/contact.module").then((m) => m.ContactPageModule),
+					import("../card/card-favorite/card-favorite.module").then(
+						(m) => m.CardFavoritePageModule
+					),
 			},
 			{
 				path: "card",
 				loadChildren: () =>
 					import("../card/card-deck/card-deck.module").then(
 						(m) => m.CardDeckPageModule
+					),
+			},
+			{
+				path: "card/:cardId",
+				loadChildren: () =>
+					import("../card/card-detail/card-detail.module").then(
+						(m) => m.CardDetailPageModule
 					),
 			},
 			{

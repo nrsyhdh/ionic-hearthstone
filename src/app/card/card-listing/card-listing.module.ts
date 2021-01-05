@@ -3,12 +3,12 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 import { IonicModule } from "@ionic/angular";
-
+import { HttpClientModule } from "@angular/common/http";
 import { CardListingPageRoutingModule } from "./card-listing-routing.module";
 
 import { CardListingPage } from "./card-listing.page";
 
-import { HttpClientModule } from "@angular/common/http";
+import { SearchComponent } from "src/app/shared/component/search/search.component";
 
 @NgModule({
 	imports: [
@@ -18,6 +18,6 @@ import { HttpClientModule } from "@angular/common/http";
 		CardListingPageRoutingModule,
 		HttpClientModule,
 	],
-	declarations: [CardListingPage],
+	declarations: [CardListingPage, SearchComponent],
 })
 export class CardListingPageModule {}
